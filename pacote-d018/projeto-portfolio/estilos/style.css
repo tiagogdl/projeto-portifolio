@@ -104,3 +104,12 @@ div#social{
   gap: 1em;
   margin-top: 15px;
 }
+
+div#social a{
+  color: var(--destaque);
+  transition: color 0.4s;
+}
+
+div#social a:hover{
+  color: var(--destaque-inverso);
+}
