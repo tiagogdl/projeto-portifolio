@@ -28,6 +28,17 @@ body{
   line-height: 1.5em;
   background-color: var(--fundo-principal);
   color: var(--texto);
+
+  transition: background-color 0.4s, color 0.4s;
+}
+
+body.escuro{
+  --fundo-principal: #222222;
+  --texto: #e0e0e0;
+  --texto-inverso: #333333;
+  --destaque: #ff5522;
+  --destaque-inverso: #a73917;
+  --fundo-card: #444444;
 }
 
 header{
@@ -38,6 +49,7 @@ header{
   background-color: var(--destaque);
   color: var(--texto);
   padding: 10px;
+  position: sticky;
 }
 
 nav#menu > ul {
@@ -74,6 +86,7 @@ section#ficha{
   border-radius: 8px;
   grid-column: 2;
 
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.315);
 }
 
 section#ficha img.foto{
@@ -115,8 +128,11 @@ div#social a:hover{
 }
 
 section#detalhes {
-  grid-column: 2
-
+  grid-column: 2;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.315);
+  margin-bottom: 19px;
+  border-radius: 8px;
+  background-color: var(--fundo-card);
 }
 
 article{
@@ -275,6 +291,25 @@ footer a:hover{
 
 
 @media screen and (min-width: 768px) {
+  main{
+    grid-template-columns: auto 300px 1fr auto;
+  }
+
+  section#ficha{
+    padding: 31px;
+    margin-bottom: 19px;
+    
+    grid-column: 2/ 3;
+    height: fit-content;
+    position: sticky;
+    top: 60px;
+  }
+
+  section#detalhes{
+    grid-column: 3 / 4;
+    
+  }
+
   #skill-container{
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
@@ -290,8 +325,16 @@ footer a:hover{
     max-width: 60%;
   }
 
-  #projeto-container .link{
-    aspect-ratio: 16/9;
+  #projeto-container .pro-link{
     max-width: 40%;
+    max-height: 200px;
+  }
+  
+  #projeto-container .foto{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    min-height: 180px;
+    max-height: 200px;
+    overflow: hidden;
   }
 }

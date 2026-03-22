@@ -38,3 +38,18 @@ navLinks.forEach(link => {
     }
   });
 });
+
+ //Alteração do target do home
+const link = document.querySelector('#link-home');
+const mq = window.matchMedia('(min-width: 768px)');
+
+function atualizar(e) {
+  if (e.matches) {
+    link.setAttribute('href', '#video');
+  } else {
+    link.setAttribute('href', '#ficha');
+  }
+}
+
+mq.addEventListener('change', atualizar);
+atualizar(mq);
